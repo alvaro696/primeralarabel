@@ -19,8 +19,11 @@ class PolizaResource extends JsonResource
             'id_cotizacion' => $this->id_cotizacion,
             'valor_asegurado' => round($this->valor_asegurado, 2),
             'prima' => round($this->prima, 2),
-            'cod_poliza' => $this->poliza->id_poliza,
-            'poliza' => $this->poliza,
+            'cod_poliza' => $this->poliza->cod_poliza,
+            'id_poliza' => $this->poliza->id_poliza,
+            'f_ini' => $this->poliza->f_ini,
+            'f_fin' => $this->poliza->f_fin,
+            //'poliza' => $this->poliza,
             'items' => $this->poliza->items
                 ->where('id_poliza', $this->poliza->id_poliza)
                 ->where('id_estado', 1)

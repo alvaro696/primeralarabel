@@ -5,10 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CotizacionController;
 use App\Http\Controllers\DistritoController;
+use App\Http\Controllers\PagoController;
 use App\Http\Controllers\PassportController;
 use App\Http\Controllers\PolizaController;
 use App\Http\Controllers\RamoController;
 use App\Http\Controllers\RamoTipoController;
+use App\Http\Controllers\SiniestroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +52,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('mis_polizas/seleccionar/{id_poliza}', [PolizaController::class, 'seleccionar']);
     Route::get('mis_polizas/listar/{id_cliente}', [PolizaController::class, 'listar']);
     Route::post('mis_polizas/crear/{id_cotizacion}', [PolizaController::class, 'crear']);
+    
+    Route::post('siniestros/crear/{id_poliza}', [SiniestroController::class, 'crear']);
+
+    Route::get('mis_pagos/listar/{id_cliente}', [PagoController::class, 'listar']);
 });

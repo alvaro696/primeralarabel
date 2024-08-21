@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_siniestro');
             $table->unsignedBigInteger('id_estado');
             $table->unsignedBigInteger('id_poliza');
-            $table->date('f_sinietro');
+            $table->date('f_siniestro');
             $table->date('f_denuncia');
             $table->text('descripcion');
             $table->date('f_registro');
